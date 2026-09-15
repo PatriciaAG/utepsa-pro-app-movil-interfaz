@@ -74,14 +74,29 @@ fun CalculadoraScreen() {
                         val numero2 = valor.toDouble()
                         val resultado =
                             when (operador) {
+                                // case1
                                 "+" -> numero1 + numero2
-                                else -> 0.0
+                                // case2
+                                "-" -> numero1 - numero2
+                                "*" -> numero1 * numero2
+                                "/" -> {
+                                    if (numero2 != 0.0) {
+                                        numero1 / numero2
+                                    } else {
+                                        null
+                                    }
+                                }
+                                //default
+                                else -> null
                             }
-                        valor =
-                            if (resultado % 1 == 0.0) {
-                                resultado.toString()
+                            valor = if (resultado == null) {
+                                "Error"
                             } else {
-                                resultado.toString()
+                                if (resultado % 1 == 0.0) {
+                                    resultado.toLong().toString()
+                                } else {
+                                    resultado.toString()
+                                }
                             }
                         primerNumero = ""
                         operador = ""

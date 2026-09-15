@@ -22,6 +22,13 @@ import com.example.calculadora.ui.theme.TextPrimary
 
 @Composable
 fun ResultadoCalculadora (valor: String, modifier: Modifier = Modifier) {
+    val fontSize = when {
+        valor.length <= 10 -> 40.sp
+        valor.length <= 15 -> 32.sp
+        valor.length <= 20 -> 26.sp
+        valor.length <= 25 -> 22.sp
+        else -> 40.sp
+    }
     Surface(
         modifier = Modifier.fillMaxWidth().height(120.dp),
         color = SurfaceLight,
@@ -35,7 +42,7 @@ fun ResultadoCalculadora (valor: String, modifier: Modifier = Modifier) {
             Text(
                 text = valor,
                 color = TextPrimary,
-                fontSize = 40.sp,
+                fontSize = fontSize,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.End
             )

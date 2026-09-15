@@ -38,9 +38,9 @@ fun TecladoCalculadora(
             BotonCalculadora("-", OperationBlue, Modifier.weight(1f), onClick = {onOperacionClick("-")})
         }
         Row(modifier = Modifier.weight(1f),horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            BotonCalculadora("C", PurplePrimary, Modifier.weight(1f), onClick = {onNumeroClick("C")})
+            BotonCalculadora("C", PurplePrimary, Modifier.weight(1f), onClick = {onLimpiarClick()})
             BotonCalculadora("0", PurplePrimary, Modifier.weight(1f), onClick = {onNumeroClick("0")})
-            BotonCalculadora("=", OperationBlue, Modifier.weight(1f), onClick = {onNumeroClick("=")})
+            BotonCalculadora("=", OperationBlue, Modifier.weight(1f), onClick = {onIgualClick()})
             BotonCalculadora("+", OperationBlue, Modifier.weight(1f), onClick = {onOperacionClick("+")})
         }
     }
